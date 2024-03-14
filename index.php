@@ -13,6 +13,21 @@ class Movie
     public $name;
     public $duration;
     public $genre;
+    public $popcorn = false;
+
+    // Methods
+    public function setPopcorn($duration)
+    {
+        if ($duration > 100) {
+            $this->popcorn = true;
+        }
+    }
+
+    public function getPopcorn()
+    {
+        return $this->popcorn;
+    }
+
 
     // Constructor
     function __construct($name, $duration, $genre)
@@ -24,5 +39,13 @@ class Movie
 }
 
 $matrix = new Movie('Matrix', 120, 'Science');
+$matrix->setPopcorn($matrix->duration);
+$matrix_popcorn = $matrix->getPopcorn();
+
+$avatar = new Movie('avatar', 80, 'Science');
+$avatar->setPopcorn($avatar->duration);
+$avatar_popcorn = $avatar->getPopcorn();
+
 
 var_dump($matrix);
+var_dump($avatar);
