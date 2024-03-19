@@ -27,6 +27,11 @@ class Movie
         return $this->popcorn;
     }
 
+    public function setOverview($overview)
+    {
+        $this->overview = $overview;
+    }
+
     // Method with static property
     public function staticLanguage()
     {
@@ -42,10 +47,11 @@ class Movie
 
 
     // Constructor
-    function __construct(public string $name, public int $duration, public array $genres)
+    function __construct(public string $name, public int $duration, public array $genres, public $overview)
     {
         $this->name = $name;
         $this->duration = $duration;
         $this->genres = $genres;
+        $this->overview = $overview;
     }
 }
